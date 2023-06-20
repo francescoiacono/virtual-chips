@@ -1,52 +1,17 @@
-.table {
-  width: 800px;
-  height: 350px;
-  background-color: #8b0000;
-  border: 10px solid #5b0000;
-  border-radius: 10px;
-  margin: 0 auto;
-  position: relative;
-  display: flex;
+.container {
+  width: 100%;
 }
 
-.container {
-  height: calc(100% - var(--navbar-height));
+.topActions {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card {
+  height: calc(100vh - 15rem);
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.playerCard {
-  position: absolute;
-  width: 200px;
-  height: 150px;
-  border-radius: 4px;
-  padding: 10px;
-  text-align: center;
-  background-color: var(--main-font-color);
-  color: var(--primary-color);
-}
-
-.playerCard:nth-child(1) {
-  top: -25%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.playerCard:nth-child(2) {
-  top: 50%;
-  left: -25%;
-  transform: translateY(-50%);
-}
-
-.playerCard:nth-child(3) {
-  bottom: -25%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.playerCard:nth-child(4) {
-  top: 50%;
-  right: -25%;
-  transform: translateY(-50%);
 }

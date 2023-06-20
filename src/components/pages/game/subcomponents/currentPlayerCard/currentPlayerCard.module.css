@@ -1,0 +1,78 @@
+.playerCard {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-font-color);
+  color: var(--primary-color);
+  border-radius: 4px;
+  padding: 1rem 1rem 3rem 1rem;
+}
+
+.playerInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.gradientBorder {
+  width: 300px;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
+}
+
+.playerInfo > h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 2.5rem;
+}
+
+.totalChips {
+  display: flex;
+  list-style-type: none;
+  padding: 1rem 0;
+  flex-direction: column;
+}
+
+.totalChips > li {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.totalChips > li > span {
+  font-weight: bold;
+}
+
+.dealerButton,
+.smallBlindButton,
+.bigBlindButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.dealerButton {
+  background-color: #fff;
+  color: #000;
+}
+
+.smallBlindButton {
+  background-color: #ff87b5;
+  color: #000;
+}
+
+.bigBlindButton {
+  background-color: #fffb87;
+  color: #000;
+}
