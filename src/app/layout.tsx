@@ -16,6 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
+      <head>
+        <title>ChipWiz</title>
+      </head>
       <body className={inter.className}>
         <Navbar />
         {children}

@@ -11,7 +11,7 @@ export default function Home() {
         height={200}
         alt='poker chips logo'
       />
-      <h1>Welcome to virtual chips</h1>
+      <h1>Welcome to ChipWhiz</h1>
       <h2>Play poker without poker chips</h2>
       <Link className={styles.startButton} href='/setup'>
         {' '}

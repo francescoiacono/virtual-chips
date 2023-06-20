@@ -1,15 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import SetupPlayers from '../setupPlayers/setupPlayers';
 import { Player } from '../../setup';
+import { useRouter } from 'next/navigation';
+import SetupPlayers from '../setupPlayers/setupPlayers';
 import styles from './setupForm.module.css';
 
 // Definition: Contains the form for setting up the game
 export default function SetupForm() {
-  const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-  };
+  const router = useRouter();
 
   const [pageData, setPageData] = useState({
     numberOfPlayers: 2,
@@ -26,6 +25,19 @@ export default function SetupForm() {
       },
     ] as Player[],
   });
+
+  const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const queryParams = new URLSearchParams({
+      numberOfPlayers: pageData.numberOfPlayers.toString(),
+      startingChips: pageData.startingChips.toString(),
+      smallBlind: pageData.smallBlind.toString(),
+      players: JSON.stringify(pageData.players),
+    });
+
+    router.push('/game' + '?' + queryParams.toString());
+  };
 
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     // If the number of players is changed, then the players array is updated

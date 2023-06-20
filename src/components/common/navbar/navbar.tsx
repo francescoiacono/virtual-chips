@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarLogo}>
-        <h3>Logo</h3>
+        <h3>ChipWiz</h3>
       </div>
       <ul className={styles.navbarMenu}>
         <li>
