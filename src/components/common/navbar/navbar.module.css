@@ -1,0 +1,24 @@
+.navbar {
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.navbarLogo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.navbarMenu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbarMenuItem {
+  font-size: 0.9rem;
+  font-weight: normal;
+}

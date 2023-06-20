@@ -1,5 +1,5 @@
-export default function Home() {
-  return (
-    <main>Home page. Welcome to virtual chips. Poker chips with no chips</main>
-  );
+import Home from '@/components/pages/home/home';
+
+export default function Page() {
+  return <Home />;
 }

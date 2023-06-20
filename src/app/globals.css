@@ -1,7 +1,9 @@
 :root {
-  --primary-color: #ff6347;
-  --secondary-color: #e74c3c;
-  --main-font-color: #333333;
+  --primary-color: #006400;
+  --secondary-color: #008000;
+  --tertiary-color: #228b22;
+  --main-font-color: #c6e1d4;
+  --navbar-height: 60px;
 }
 
 html,
@@ -12,6 +14,14 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
+  height: 100vh;
+
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--tertiary-color)
+  );
   color: var(--main-font-color);
 }
 
