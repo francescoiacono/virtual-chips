@@ -1,0 +1,13 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* .card:hover {
+  transform: scale(1.05);
+} */
+
+.card > h3 {
+  margin: 0;
+}

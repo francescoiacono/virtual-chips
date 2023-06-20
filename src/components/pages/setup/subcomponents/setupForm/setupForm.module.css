@@ -1,0 +1,43 @@
+/* setupForm.module.css */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr;
+}
+
+.rules,
+.rules > label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.rules label > span {
+  font-weight: bold;
+}
+
+.rules > input[type='number'] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form > button[type='submit'] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form > button[type='submit']:hover {
+  background-color: #0056b3;
+}
