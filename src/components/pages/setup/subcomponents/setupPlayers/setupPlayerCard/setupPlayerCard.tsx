@@ -31,8 +31,8 @@ export default function SetupPlayerCard({ player, id, updatePlayer }: Props) {
 
   return (
     <div className={styles.card}>
-      <h3>Player {id}</h3>
-      <label>
+      <h3>👤 Player {id}</h3>
+      <label className={styles.nameLabel}>
         <span>Name</span>
         <input type='text' name='name' onChange={onChangeHandler} />
       </label>

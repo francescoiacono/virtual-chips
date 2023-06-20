@@ -12,24 +12,48 @@ export default function SetupForm() {
   };
 
   const [pageData, setPageData] = useState({
-    numberOfPlayers: 0,
+    numberOfPlayers: 2,
     startingChips: 10,
     smallBlind: 5,
-    players: [] as Player[],
+    players: [
+      {
+        name: '',
+        isDealer: false,
+      },
+      {
+        name: '',
+        isDealer: false,
+      },
+    ] as Player[],
   });
 
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     // If the number of players is changed, then the players array is updated
     if (event.target.name === 'numberOfPlayers') {
-      const numberOfPlayers = Number(event.target.value);
+      let numberOfPlayers = Number(event.target.value);
+
+      // If the value is not a number, then the state is reset
       if (Number.isNaN(numberOfPlayers)) {
         setPageData({
           ...pageData,
-          numberOfPlayers: 0,
-          players: [],
+          numberOfPlayers: 2,
         });
-      } else {
+      }
+
+      // If the value is a number
+      else {
+        // If the value is greater than 10, then it is set to 10
+        if (numberOfPlayers > 10) {
+          numberOfPlayers = 10;
+        }
+        // If the value is less than 2, then it is set to 2
+        if (numberOfPlayers < 2) {
+          numberOfPlayers = 2;
+        }
+
+        // The state is updated
         setPageData((prevState) => {
+          // update players array with the new number of players
           const players = Array.from(
             { length: numberOfPlayers },
             (_, index) => ({
@@ -37,7 +61,6 @@ export default function SetupForm() {
               isDealer: false,
             })
           );
-
           return {
             ...prevState,
             numberOfPlayers,
@@ -45,6 +68,7 @@ export default function SetupForm() {
           };
         });
       }
+
       return;
     }
 
@@ -86,7 +110,7 @@ export default function SetupForm() {
 
   return (
     <>
-      <h2>Setup</h2>
+      <h3>Choose your settings:</h3>
       <form onSubmit={onSubmitHandler} className={styles.form}>
         <div className={styles.container}>
           <div className={styles.rules}>
@@ -96,13 +120,13 @@ export default function SetupForm() {
                 type='number'
                 name='numberOfPlayers'
                 onChange={onChangeHandler}
-                min='0'
+                min='2'
                 max='10'
                 value={pageData.numberOfPlayers}
               />
             </label>
             <label>
-              <span>Starting chips</span>
+              <span>Starting chips (p.p.)</span>
               <input
                 type='number'
                 name='startingChips'
