@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Player } from '@/components/pages/setup/setup';
 import StageTracker from './subcomponents/stageTracker/stageTracker';
@@ -28,6 +28,10 @@ export default function Game() {
     setCurrentPlayerIndex((currentPlayerIndex + 1) % pageData.players.length);
   };
 
+  useEffect(() => {
+    console.log('GAME', pageData);
+  }, [pageData]);
+
   return (
     <section className={styles.container}>
       <div className={styles.topActions}>
@@ -41,7 +45,7 @@ export default function Game() {
           currentPlayer={pageData.players[currentPlayerIndex]}
         />
       </div>
-      <PlayerActions />
+      <PlayerActions testEndTurn={endTurn} />
     </section>
   );
 }

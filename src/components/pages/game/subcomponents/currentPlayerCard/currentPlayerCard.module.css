@@ -5,17 +5,18 @@
   color: var(--primary-color);
   border-radius: 4px;
   padding: 1rem 1rem 3rem 1rem;
+  min-width: 20rem;
 }
 
 .playerInfo {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   width: 100%;
 }
 
 .gradientBorder {
-  width: 300px;
   height: 1px;
   background-image: linear-gradient(
     to right,

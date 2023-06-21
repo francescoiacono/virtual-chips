@@ -26,7 +26,6 @@ export default function SetupPlayerCard({ player, id, updatePlayer }: Props) {
 
   useEffect(() => {
     updatePlayer(id - 1, playerData);
-    console.log(playerData);
   }, [playerData]);
 
   return (
